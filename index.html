@@ -11,8 +11,53 @@
             border: 0;
             box-sizing: border-box;
         }
+        body {
+            height: 100vh;
+            overflow: hidden;
+            background-color: #272822;
+            color: white;
+        }
+        .grid-container {
+            display: grid;
+            height: 100%;
+            grid-template-columns: 1fr 350px 1fr;
+            grid-template-rows: 1fr auto 1fr;
+            grid-gap: 0px 0px;
+            grid-template-areas: "top top top" "left tiles right" "bottom bottom bottom";
+        }
+        .top {
+            grid-area: top;
+        }
+        .left {
+            grid-area: left;
+        }
+        .tiles {
+            grid-area: tiles;
+        }
+        .right {
+            grid-area: right;
+        }
+        .bottom {
+            grid-area: bottom;
+        }
+        .mask {
+            background: #272822;
+            position: relative;
+            z-index: 2;
+        }
+        .tiles {
+            width: 350px;
+        }
     </style>
 </head>
 <body>
+<div class="grid-container">
+    <div class="mask top"></div>
+    <div class="mask left"></div>
+    <div class="tiles"></div>
+    <div class="mask right"></div>
+    <div class="mask bottom"></div>
+</div>
+<div id="light"></div>
 </body>
 </html>
