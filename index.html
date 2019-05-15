@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Win10 like mousehover</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <style type="text/css">
         * {
             margin: 0;
@@ -47,6 +48,36 @@
         }
         .tiles {
             width: 350px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        .tile {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #272822;
+            z-index: 2;
+        }
+        .tile:after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            background-color: #272822;
+            top: 2px;
+            bottom: 2px;
+            right: 2px;
+            left: 2px;
+        }
+        .tile:hover:after {
+            background: rgba(0,0,0);
+            filter: blur(35px);
+        }
+        i {
+            font-size: 35px;
         }
         #light {
             position: absolute;
@@ -63,7 +94,43 @@
 <div class="grid-container">
     <div class="mask top"></div>
     <div class="mask left"></div>
-    <div class="tiles"></div>
+    <div class="tiles">
+        <div class="tile"><i class="far fa-angry"></i></div>
+        <div class="tile"><i class="far fa-dizzy"></i></div>
+        <div class="tile"><i class="far fa-frown"></i></div>
+        <div class="tile"><i class="far fa-frown-open"></i></div>
+        <div class="tile"><i class="far fa-grimace"></i></div>
+        <div class="tile"><i class="far fa-grin"></i></div>
+        <div class="tile"><i class="far fa-grin-alt"></i></div>
+        <div class="tile"><i class="far fa-grin-beam"></i></div>
+        <div class="tile"><i class="far fa-grin-beam-sweat"></i></div>
+        <div class="tile"><i class="far fa-grin-hearts"></i></div>
+        <div class="tile"><i class="far fa-grin-squint"></i></div>
+        <div class="tile"><i class="far fa-grin-squint-tears"></i></div>
+        <div class="tile"><i class="far fa-grin-stars"></i></div>
+        <div class="tile"><i class="far fa-grin-tears"></i></div>
+        <div class="tile"><i class="far fa-grin-tongue"></i></div>
+        <div class="tile"><i class="far fa-grin-tongue-squint"></i></div>
+        <div class="tile"><i class="far fa-grin-tongue-wink"></i></div>
+        <div class="tile"><i class="far fa-grin-wink"></i></div>
+        <div class="tile"><i class="far fa-kiss"></i></div>
+        <div class="tile"><i class="far fa-kiss-beam"></i></div>
+        <div class="tile"><i class="far fa-kiss-wink-heart"></i></div>
+        <div class="tile"><i class="far fa-laugh"></i></div>
+        <div class="tile"><i class="far fa-laugh-beam"></i></div>
+        <div class="tile"><i class="far fa-laugh-squint"></i></div>
+        <div class="tile"><i class="far fa-laugh-wink"></i></div>
+        <div class="tile"><i class="far fa-meh"></i></div>
+        <div class="tile"><i class="far fa-meh-blank"></i></div>
+        <div class="tile"><i class="far fa-meh-rolling-eyes"></i></div>
+        <div class="tile"><i class="far fa-sad-cry"></i></div>
+        <div class="tile"><i class="far fa-sad-tear"></i></div>
+        <div class="tile"><i class="far fa-smile"></i></div>
+        <div class="tile"><i class="far fa-smile-beam"></i></div>
+        <div class="tile"><i class="far fa-smile-wink"></i></div>
+        <div class="tile"><i class="far fa-surprise"></i></div>
+        <div class="tile"><i class="far fa-tired"></i></div>
+    </div>
     <div class="mask right"></div>
     <div class="mask bottom"></div>
 </div>
