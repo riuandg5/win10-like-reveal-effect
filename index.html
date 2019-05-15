@@ -48,6 +48,15 @@
         .tiles {
             width: 350px;
         }
+        #light {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            transform: translate3d(-50%, -50%, 0);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(238, 238, 238, 0.5) 0%, rgba(238, 238, 238, 0) 50%);
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -59,5 +68,12 @@
     <div class="mask bottom"></div>
 </div>
 <div id="light"></div>
+<script>
+    const light = document.getElementById("light");
+    document.addEventListener("mousemove", e => {
+        light.style.top = e.pageY + "px";
+        light.style.left = e.pageX + "px";
+    });
+</script>
 </body>
 </html>
