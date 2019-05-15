@@ -10,7 +10,8 @@
             margin: 0;
             padding: 0;
             border: 0;
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
         }
         body {
             height: 100vh;
@@ -19,26 +20,41 @@
             color: white;
         }
         .grid-container {
+            display: -ms-grid;
             display: grid;
             height: 100%;
+            -ms-grid-columns: 1fr 0px 350px 0px 1fr;
             grid-template-columns: 1fr 350px 1fr;
+            -ms-grid-rows: 1fr 0px auto 0px 1fr;
             grid-template-rows: 1fr auto 1fr;
             grid-gap: 0px 0px;
-            grid-template-areas: "top top top" "left tiles right" "bottom bottom bottom";
+                grid-template-areas: "top top top" "left tiles right" "bottom bottom bottom";
         }
         .top {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 5;
             grid-area: top;
         }
         .left {
+            -ms-grid-row: 3;
+            -ms-grid-column: 1;
             grid-area: left;
         }
         .tiles {
+            -ms-grid-row: 3;
+            -ms-grid-column: 3;
             grid-area: tiles;
         }
         .right {
+            -ms-grid-row: 3;
+            -ms-grid-column: 5;
             grid-area: right;
         }
         .bottom {
+            -ms-grid-row: 5;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 5;
             grid-area: bottom;
         }
         .mask {
@@ -48,17 +64,27 @@
         }
         .tiles {
             width: 350px;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-wrap: wrap;
-            align-content: flex-start;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            -ms-flex-line-pack: start;
+                align-content: flex-start;
         }
         .tile {
             position: relative;
             width: 70px;
             height: 70px;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             border: 2px solid #272822;
             z-index: 2;
         }
@@ -74,19 +100,23 @@
         }
         .tile:hover:after {
             background: rgba(0,0,0);
-            filter: blur(35px);
-        }
-        i {
-            font-size: 35px;
+            -webkit-filter: blur(35px);
+                    filter: blur(35px);
         }
         #light {
             position: absolute;
             width: 250px;
             height: 250px;
-            transform: translate3d(-50%, -50%, 0);
+            -webkit-transform: translate3d(-50%, -50%, 0);
+                    transform: translate3d(-50%, -50%, 0);
             border-radius: 50%;
+            background: -webkit-radial-gradient(circle, rgba(238, 238, 238, 0.5) 0%, rgba(238, 238, 238, 0) 50%);
+            background: -o-radial-gradient(circle, rgba(238, 238, 238, 0.5) 0%, rgba(238, 238, 238, 0) 50%);
             background: radial-gradient(circle, rgba(238, 238, 238, 0.5) 0%, rgba(238, 238, 238, 0) 50%);
             z-index: 1;
+        }
+        i {
+            font-size: 35px;
         }
     </style>
 </head>
